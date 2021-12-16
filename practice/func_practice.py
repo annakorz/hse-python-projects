@@ -40,6 +40,9 @@ import string
 
 def password_setup(num,num_cap_letters = 3,num_digits = 4):
     '''Function takes in a number and returns a generated password that must consist of 3 capital letters, 4 numbers and any number of other lowercase letters'''
+    while num < 8:
+        num = int(input("Password must consist of no less than 8 symbols: "))
+    
     # random.sample(seq, num of elements to be picked) returns a list of unique elements vs. random.choice(seq) returns a list of random elements (i.e. elements can be repeated)
     capital_letters = random.sample(string.ascii_uppercase, num_cap_letters)
     numbers = random.sample(string.digits,num_digits)
@@ -49,4 +52,4 @@ def password_setup(num,num_cap_letters = 3,num_digits = 4):
 
     return password
 
-print(password_setup(11))
+print(password_setup(7))
